@@ -9,7 +9,7 @@
 // Setup a RotaryEncoder for pins 2 and 3:
 RotaryEncoder encoder(2, 3);
 
-OneButton button(A1, true, true);
+OneButton button(4, true, true);
 
 DS3231 clock;
 RTCDateTime dt;
@@ -19,7 +19,7 @@ RTCDateTime dt;
 
 // Define proper RST_PIN if required.
 #define RST_PIN -1
-
+#define relayPin 12
 SSD1306AsciiAvrI2c display;
 
 bool relayStatus = 0;
@@ -45,7 +45,7 @@ void setup()
 {
   Serial.begin(9600);
   
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(relayPin, OUTPUT);
 
 #if RST_PIN >= 0
   display.begin(&Adafruit128x32, I2C_ADDRESS, RST_PIN);
@@ -245,7 +245,7 @@ void mainMenu()
 
 void loop()
 {   
-  digitalWrite(LED_BUILTIN,relayStatus);
+  digitalWrite(relayPin,!relayStatus);
   button.tick();
   
   static int lastSec = 0; 
