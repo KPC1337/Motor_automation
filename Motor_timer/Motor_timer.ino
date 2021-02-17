@@ -521,21 +521,18 @@ void loop()
             if(settingMode){
             switch(timeSetItem){
               case 1:
-              timerHH[timerNumber]--;
-              if(timerHH[timerNumber] < 0){
-                timerHH[timerNumber] =0;
+              if(timerHH[timerNumber] > 0){
+                timerHH[timerNumber]--;
               }
               break;
               case 2:
-              timerMM[timerNumber]--;
-              if(timerMM[timerNumber] < 0){
-                timerMM[timerNumber] =0;
+              if(timerMM[timerNumber] > 0){
+                timerMM[timerNumber]--;
               }
               break;
               case 3:
-              timerSS[timerNumber]--;
-              if(timerSS[timerNumber] < 0){
-                timerSS[timerNumber] =0;
+              if(timerSS[timerNumber] > 0){
+                timerSS[timerNumber]--;
               }
               break;
             }
