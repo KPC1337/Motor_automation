@@ -14,13 +14,14 @@ OneButton button(4, true, true);
 DS3231 clock;
 RTCDateTime dt;
 
+SSD1306AsciiAvrI2c display;
+
 // 0X3C+SA0 - 0x3C or 0x3D
 #define I2C_ADDRESS 0x3C
 
 // Define proper RST_PIN if required.
 #define RST_PIN -1
 #define relayPin 12
-SSD1306AsciiAvrI2c display;
 
 bool relayStatus = 0;
 
