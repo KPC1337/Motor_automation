@@ -7,7 +7,7 @@
 #include "SSD1306AsciiAvrI2c.h"
 
 // Setup a RotaryEncoder for pins 2 and 3:
-RotaryEncoder encoder(2, 3);
+RotaryEncoder encoder(3, 2);
 
 OneButton button(4, true, true);
 
